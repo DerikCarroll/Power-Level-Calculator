@@ -82,3 +82,6 @@ form.addEventListener("submit", function(event) {
     h3.textContent = "To Next Level: 1";
   }
 });
+
+// https://www.w3schools.com/js/js_if_else.asp
+// Was used to figure out the right syntax for an IF statement in javascript.
