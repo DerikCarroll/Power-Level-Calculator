@@ -85,3 +85,5 @@ form.addEventListener("submit", function(event) {
 
 // https://www.w3schools.com/js/js_if_else.asp
 // Was used to figure out the right syntax for an IF statement in javascript.
+// For the .toFixed(), I took what I knew of .toString from C# and let autofill help me to find the right one.
+// Bit of a brute force method, but for a small project like this it worked for me.
