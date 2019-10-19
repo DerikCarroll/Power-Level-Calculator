@@ -32,3 +32,44 @@ const gauntlet = document.querySelector("#gauntlet");
 const chest = document.querySelector("#chest");
 const legs = document.querySelector("#legs");
 const classitem = document.querySelector("#class");
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const total = powercalc.add(
+    kinetic.value,
+    energy.value,
+    heavy.value,
+    helmet.value,
+    gauntlet.value,
+    chest.value,
+    legs.value,
+    classitem.value
+  );
+
+  h2.textContent = powercalc.divide(total).toFixed(1);
+  if (powercalc.remainder(total) == 0) {
+    h3.textContent = "To Next Level: 8";
+  }
+  if (powercalc.remainder(total) == 1) {
+    h3.textContent = "To Next Level: 7";
+  }
+  if (powercalc.remainder(total) == 2) {
+    h3.textContent = "To Next Level: 6";
+  }
+  if (powercalc.remainder(total) == 3) {
+    h3.textContent = "To Next Level: 5";
+  }
+  if (powercalc.remainder(total) == 4) {
+    h3.textContent = "To Next Level: 4";
+  }
+  if (powercalc.remainder(total) == 5) {
+    h3.textContent = "To Next Level: 3";
+  }
+  if (powercalc.remainder(total) == 6) {
+    h3.textContent = "To Next Level: 2";
+  }
+  if (powercalc.remainder(total) == 7) {
+    h3.textContent = "To Next Level: 1";
+  }
+});
