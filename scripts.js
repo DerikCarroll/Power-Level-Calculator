@@ -1,6 +1,8 @@
-// Simple power level calculator for Destiny 2
+// Simple power level calculator for Destiny 2.
 
+// Object literal of calculator functions needed to calculate guardian power level.
 const powercalc = {
+  // Add to get total power of all gear combined.
   add(a, b, c, d, e, f, g, h) {
     return (
       Number(a) +
@@ -13,14 +15,17 @@ const powercalc = {
       Number(h)
     );
   },
+  // Use total power to find average balance of power between equipment.
   divide(a) {
     return a / 8;
   },
+  // Use the remained to calculate how much to next power level.
   remainder(a) {
     return a % 8;
   }
 };
 
+// All the const variables needed from the html form to run calculations.
 const form = document.querySelector("form");
 const h2 = document.querySelector("h2");
 const h3 = document.querySelector("h3");
@@ -33,9 +38,12 @@ const chest = document.querySelector("#chest");
 const legs = document.querySelector("#legs");
 const classitem = document.querySelector("#class");
 
+// Listen for a submit event on the form to run callback functions.
 form.addEventListener("submit", function(event) {
+  // Used to stop webpage from trying to actually submit the form.
   event.preventDefault();
 
+  // callback function to find total power of all equipment combined.
   const total = powercalc.add(
     kinetic.value,
     energy.value,
@@ -47,6 +55,7 @@ form.addEventListener("submit", function(event) {
     classitem.value
   );
 
+  // Use remainder and an if statement to display how much power is needed to get to the next power level.
   h2.textContent = powercalc.divide(total).toFixed(1);
   if (powercalc.remainder(total) == 0) {
     h3.textContent = "To Next Level: 8";
